@@ -1,0 +1,35 @@
+{
+  "name": "coiffeur-berre-website",
+  "version": "1.0.0",
+  "description": "A website for a hairdresser in Berre-l'Étang with customer reviews and appointment scheduling.",
+  "main": "src/backend/server.ts",
+  "scripts": {
+    "start": "node dist/backend/server.js",
+    "build": "tsc",
+    "dev": "ts-node src/backend/server.ts",
+    "client": "npm start --prefix src/frontend",
+    "server": "nodemon src/backend/server.ts",
+    "heroku-postbuild": "npm run build --prefix src/frontend"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2",
+    "ts-node": "^9.1.1",
+    "nodemon": "^2.0.4",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-typescript": "^14.0.1"
+  },
+  "keywords": [
+    "hairdresser",
+    "appointments",
+    "reviews",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
