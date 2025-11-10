@@ -1,0 +1,40 @@
+.header {
+    background: #fffdfc;
+    border-bottom: 1px solid #f1e5dd;
+    padding: 1rem 0;
+}
+
+.header-inner {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #4f4f57;
+    font-weight: 600;
+}
+
+.navigation a:hover {
+    color: #c1683c;
+}
