@@ -1,35 +1,26 @@
 {
   "name": "coiffeur-berre-website",
   "version": "1.0.0",
-  "description": "A website for a hairdresser in Berre-l'Étang with customer reviews and appointment scheduling.",
-  "main": "src/backend/server.ts",
+  "private": true,
+  "description": "Site vitrine Atelier MB optimisé pour un déploiement local et sur Vercel.",
   "scripts": {
-    "start": "node dist/backend/server.js",
-    "build": "tsc",
-    "dev": "ts-node src/backend/server.ts",
-    "client": "npm start --prefix src/frontend",
-    "server": "nodemon src/backend/server.ts",
-    "heroku-postbuild": "npm run build --prefix src/frontend"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0"
+    "clsx": "^2.1.0",
+    "next": "14.2.9",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "typescript": "^4.1.2",
-    "ts-node": "^9.1.1",
-    "nodemon": "^2.0.4",
-    "eslint": "^7.11.0",
-    "eslint-config-airbnb-typescript": "^14.0.1"
-  },
-  "keywords": [
-    "hairdresser",
-    "appointments",
-    "reviews",
-    "website"
-  ],
-  "author": "Your Name",
-  "license": "MIT"
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.9",
+    "typescript": "^5.5.4"
+  }
 }

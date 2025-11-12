@@ -1,70 +1,55 @@
-# Coiffeur Berre Website
+# Atelier MB — site vitrine
 
-Welcome to the Coiffeur Berre website project! This project is designed for a hairdresser located in Berre-l'Étang, providing an online platform for customers to view services, leave reviews, and book appointments.
+Application Next.js 14 qui regroupe le site public, la prise de rendez-vous et les formulaires de contact du salon Atelier MB à Berre-l’Étang. Cette version est pensée pour tourner sans serveur dédié et se déploie instantanément sur Vercel.
 
-## Features
+## Stack
 
-- **Customer Reviews**: Customers can submit their reviews and read feedback from others.
-- **Appointment Scheduling**: Customers can book appointments from Tuesday to Saturday, between 9 AM and 7 PM.
-- **Service Listings**: A detailed list of services offered by the hairdresser, including descriptions and prices.
-- **Contact Form**: A form for customers to reach out with inquiries or feedback.
+- [Next.js 14](https://nextjs.org/) (App Router, API routes serverless)
+- TypeScript + ESLint (config `next/core-web-vitals`)
+- CSS globale minimaliste (pas de dépendance UI)
 
-## Project Structure
+## Démarrage local
 
-The project is organized into a frontend and backend structure:
+```bash
+npm install
+npm run dev
+```
 
-- **Frontend**: Contains all the React components, pages, and styles.
-  - `src/frontend/pages`: Main pages of the website.
-  - `src/frontend/components`: Reusable components like Header and Footer.
-  - `src/frontend/features`: Specific features like Reviews and Appointments.
-  - `src/frontend/styles`: CSS styles for the website.
+Le site est accessible sur [http://localhost:3000](http://localhost:3000).  
+Pour vérifier la build de production : `npm run build && npm run start`.
 
-- **Backend**: Handles API requests and database interactions.
-  - `src/backend/controllers`: Logic for handling reviews and appointments.
-  - `src/backend/routes`: API route definitions.
-  - `src/backend/models`: Database models for reviews and appointments.
-  - `src/backend/db`: Database connection and configuration.
+## Variables d’environnement
 
-## Setup Instructions
+Copiez `.env.example` vers `.env` puis adaptez selon vos coordonnées :
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+```
+NEXT_PUBLIC_SALON_PHONE=04 42 09 04 78
+NEXT_PUBLIC_SALON_ADDRESS=15 rue de la République, 13130 Berre-l'Étang
+NEXT_PUBLIC_SALON_EMAIL=contact@atelier-mb.fr
+NEXT_PUBLIC_SALON_MAP_URL=https://maps.google.com/...
+NEXT_PUBLIC_SALON_APPLE_MAP_URL=https://maps.apple.com/...
+CONTACT_FORWARD_EMAIL=contact@atelier-mb.fr
+APPOINTMENT_FORWARD_EMAIL=rdv@atelier-mb.fr
+```
 
-2. Navigate to the project directory:
-   ```
-   cd coiffeur-berre-website
-   ```
+Les deux dernières valeurs sont simplement utilisées pour mentionner l’adresse interne vers laquelle les formulaires seraient routés. Intégrez votre outil (Resend, Mailjet, Airtable…) dans `app/api/*` si besoin.
 
-3. Install dependencies:
-   ```
-   npm install
-   ```
+## Déploiement Vercel
 
-4. Set up environment variables:
-   - Copy `.env.example` to `.env` and fill in the required values.
+1. Importer le repo sur [vercel.com](https://vercel.com/) (bouton “New Project”).
+2. Choisir le framework Next.js (détection automatique).
+3. Définir les variables d’environnement listées ci-dessus dans l’onglet *Environment Variables*.
+4. Lancer le déploiement : Vercel installe les dépendances, exécute `npm run build` puis expose le site. L’API `/api/contact` est prête si vous souhaitez brancher un service d’email, mais le site fonctionne sans backend supplémentaire.
 
-5. Start the backend server:
-   ```
-   npm run start:backend
-   ```
+## Structure
 
-6. Start the frontend development server:
-   ```
-   npm run start:frontend
-   ```
+- `app/` : la page unique (`page.tsx`) et les routes API (ex. `/api/contact`).
+- `components/` : sections réutilisables (hero, services, portfolio, équipe, réservation…).
+- `data/` : contenu statique (services, équipe, avis, coordonnées).
+- `app/globals.css` : thème global & grille responsive.
 
-## Technologies Used
+## Aller plus loin
 
-- React for the frontend
-- Node.js and Express for the backend
-- MongoDB for the database (or any other database of your choice)
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+- Brancher un outil d’emailing dans les routes API pour transformer les formulaires en messages envoyés.
+- Remplacer les données statiques (`data/`) par un CMS/headless ou une base Firestore/Supabase si nécessaire.
+- Ajouter l’analytics de Vercel ou Plausible pour suivre les conversions “Prendre RDV”.
