@@ -39,7 +39,7 @@ Les deux dernières valeurs sont simplement utilisées pour mentionner l’adres
 1. Importer le repo sur [vercel.com](https://vercel.com/) (bouton “New Project”).
 2. Choisir le framework Next.js (détection automatique).
 3. Définir les variables d’environnement listées ci-dessus dans l’onglet *Environment Variables*.
-4. Lancer le déploiement : Vercel installe les dépendances, exécute `npm run build` puis expose le site. L’API `/api/contact` est prête si vous souhaitez brancher un service d’email, mais le site fonctionne sans backend supplémentaire.
+4. Lancer le déploiement : Vercel installe les dépendances, exécute `npm run build` puis expose le site. Le projet vit désormais à la racine du dépôt, aucun "Root Directory" supplémentaire n’est requis.
 
 ## Structure
 
