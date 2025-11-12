@@ -6,7 +6,7 @@ export const services: Service[] = [
     title: 'Coupe Signature',
     description:
       'Diagnostic, shampoing profond, coupe personnalisée et coiffage. Idéal pour rafraîchir votre style en 45 minutes.',
-    price: '38 €',
+    price: '22 €',
     duration: '45 min',
   },
   {
