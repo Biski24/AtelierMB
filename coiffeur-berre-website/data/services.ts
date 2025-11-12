@@ -7,7 +7,7 @@ export const services: Service[] = [
     description:
       'Diagnostic, shampoing profond, coupe personnalisée et coiffage. Idéal pour rafraîchir votre style en 45 minutes.',
     price: '22 €',
-    duration: '45 min',
+    duration: '25 min',
   },
   {
     id: 'color-expert',
