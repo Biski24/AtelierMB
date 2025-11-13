@@ -37,9 +37,9 @@ Les deux dernières valeurs sont simplement utilisées pour mentionner l’adres
 ## Déploiement Vercel
 
 1. Importer le repo sur [vercel.com](https://vercel.com/) (bouton “New Project”).
-2. Choisir le framework Next.js (détection automatique).
+2. Laisser Vercel détecter le framework grâce au fichier `vercel.json` (framework forcé sur Next.js). Ne changez pas le *Root Directory* : la racine du dépôt contient déjà `package.json`.
 3. Définir les variables d’environnement listées ci-dessus dans l’onglet *Environment Variables*.
-4. Lancer le déploiement : Vercel installe les dépendances, exécute `npm run build` puis expose le site. Le projet vit désormais à la racine du dépôt, aucun "Root Directory" supplémentaire n’est requis.
+4. Lancer le déploiement : Vercel installe les dépendances (`npm install`), exécute `npm run build` puis sert le dossier `.next` produit automatiquement.
 
 ## Structure
 
